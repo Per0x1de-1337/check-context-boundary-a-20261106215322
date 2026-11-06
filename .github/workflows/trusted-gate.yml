@@ -1,6 +1,9 @@
-name: Trusted gate provenance control
+name: Foreign repository gate
 
 on:
+  push:
+    branches:
+      - foreign-check
   workflow_dispatch:
 
 jobs:
@@ -8,6 +11,6 @@ jobs:
     name: trusted-gate
     runs-on: ubuntu-latest
     steps:
-      - name: Emit synthetic control
-        run: printf '%s\n' 'trusted upstream control'
+      - name: Emit synthetic fork result
+        run: printf '%s\n' 'foreign repository check only'
 
